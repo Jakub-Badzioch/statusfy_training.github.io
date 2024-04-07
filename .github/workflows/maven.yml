@@ -1,0 +1,13 @@
+name: "Deploy Statusfy"
+on:
+  push:
+    branches: ["master"]
+
+jobs:
+  github-pages:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Publish the static site to GitHub Pages.
+        uses: jamesives/github-pages-deploy-action@releases/v3
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
